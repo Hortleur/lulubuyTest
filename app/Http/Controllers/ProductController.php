@@ -55,6 +55,7 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
+        return $product;
     }
 
     /**
@@ -78,6 +79,12 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+        if($product->update($request->all())){
+            return response()->json([
+                'success' => 'Produit modifié avec succès'
+            ], 201);
+        }
+        
     }
 
     /**
