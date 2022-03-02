@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="/css/app.css">
         <title>Test Lulubuy</title>
     </head>
-    <body class=" bg-gradient-to-b from-slate-300 via-zinc-500 to-teal-900 h-screen">
+    <body class=" bg-gradient-to-b from-slate-300 via-zinc-500 to-teal-900 h-full">
         @yield('content')
+        @yield('produits')
     </body>
 </html>
