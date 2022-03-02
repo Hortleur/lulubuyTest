@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-       return Product::all();
+       return Product::orderByDesc('id')->get();
        
     }
 
@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        Product::create($request->all());
+        
     }
 
     /**
@@ -37,6 +37,13 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        if(Product::create($request->all())){
+            return response()->json([
+                'success' => 'Produit créé avec succès'
+            ], 200);
+        }
+        
+        
     }
 
     /**
@@ -82,5 +89,6 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+        //Product::delete($request)
     }
 }
