@@ -13,7 +13,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
        return Product::orderByDesc('id')->get();
        
     }
@@ -97,5 +97,10 @@ class ProductController extends Controller
     {
         //
         //Product::delete($request)
+        if($product->delete()){
+            return response()->json([
+                'succes' => 'Produit supprimé avec succès'
+            ],201);
+        }
     }
 }
