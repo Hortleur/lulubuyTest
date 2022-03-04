@@ -494,6 +494,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .min-h-screen {
   min-height: 100vh;
 }
+.w-full {
+  width: 100%;
+}
 .w-1\/5 {
   width: 20%;
 }
@@ -509,6 +512,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-auto {
   width: auto;
 }
+.w-1\/3 {
+  width: 33.333333%;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -520,6 +526,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex-row {
   flex-direction: row;
+}
+.flex-col {
+  flex-direction: column;
 }
 .flex-wrap {
   flex-wrap: wrap;
@@ -533,6 +542,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .justify-around {
   justify-content: space-around;
 }
@@ -541,6 +553,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.rounded-full {
+  border-radius: 9999px;
 }
 .border-2 {
   border-width: 2px;
@@ -588,15 +603,25 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
+.bg-gradient-to-t {
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
+}
 .from-slate-300 {
   --tw-gradient-from: #cbd5e1;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(203 213 225 / 0));
+}
+.from-emerald-400 {
+  --tw-gradient-from: #34d399;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(52 211 153 / 0));
 }
 .via-zinc-500 {
   --tw-gradient-stops: var(--tw-gradient-from), #71717a, var(--tw-gradient-to, rgb(113 113 122 / 0));
 }
 .to-teal-900 {
   --tw-gradient-to: #134e4a;
+}
+.to-emerald-50 {
+  --tw-gradient-to: #ecfdf5;
 }
 .p-6 {
   padding: 1.5rem;

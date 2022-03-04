@@ -9,10 +9,6 @@ class ViewController extends Controller
 {
     public function index()
     {
-        $title = "Lulubuy Test";
-
-        $products = Product::all();
-
-        return view('acceuil', compact('title', "products"));
+        return view('app');
     }
 }

@@ -55,7 +55,12 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         //
-        return $product;
+        try{
+            return $product;
+        }
+        catch(\Exception $exception){
+
+        }
     }
 
     /**
