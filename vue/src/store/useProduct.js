@@ -1,22 +1,36 @@
-import { defineStore } from "pinia";
 import axios from "axios";
-const api = axios.create({
-    baseURL: "http://lulubuytest.test/api",
+import { defineStore } from "pinia";
+const instance = axios.create({
+    baseURL: 'http://localhost:8000/api'
 })
 
 export const useProductStore = defineStore("product", {
-    state: ()=> ({ products: []   }),
+    state: ()=> { 
+        return {
+            products: [] ,
+            affichage: 30
+        }
+    },
     getters: {
-        
-    } ,
+       filtredProd(){
+           return this.products = this.products.filter(product => product.id < this.affichage)
+       },
+       
+       
+    },
     actions: {
-       async getProduct() {
-            await api.get('/product')
-           .then ((res) => 
+        getProduct(){
+            instance.get('/product')   
+            .then(res => {
                 this.products = res.data
-           ).catch((error) => {
-               return(this.error = error)
-           })
-       }
+            })                  
+            .catch(err => {
+                console.log(err)
+            })    
+       },
+        addProduct(){
+             this.affichage += 10
+        }
+       
     }
 })
