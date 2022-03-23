@@ -13,9 +13,8 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
        return Product::orderByDesc('id')->get();
-       
     }
 
     /**
@@ -25,7 +24,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -42,8 +41,8 @@ class ProductController extends Controller
                 'success' => 'Produit créé avec succès'
             ], 200);
         }
-        
-        
+
+
     }
 
     /**
@@ -52,15 +51,10 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
         //
-        try{
-            return $product;
-        }
-        catch(\Exception $exception){
-
-        }
+        return Product::find($id);
     }
 
     /**
@@ -89,7 +83,7 @@ class ProductController extends Controller
                 'success' => 'Produit modifié avec succès'
             ], 201);
         }
-        
+
     }
 
     /**

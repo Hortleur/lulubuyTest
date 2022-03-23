@@ -166,6 +166,9 @@ return [
          * Package Service Providers...
          */
 
+        //Kreait\Laravel\Firebase\ServiceProvider::cla,
+
+
         /*
          * Application Service Providers...
          */
